@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Worth It — Everyday finds, worth buying</title>
+<style>
+  /*
+    MAINTAINER NOTES (not visible on the page):
+    - This is a starter affiliate roundup site. Every product card below is a
+      SAMPLE PICK (marked with the ribbon) — swap in real products once you
+      have them, and swap the placeholder tracking tag out of every link.
+    - Each "Shop this pick" link points to a generic Amazon search so it's
+      clickable today: .../s?k=<search+terms>&tag=YOUR-ASSOCIATES-TAG-20
+      Once your Amazon Associates application is approved, find your own
+      tracking ID in Associates Central and replace YOUR-ASSOCIATES-TAG-20
+      everywhere it appears (search the file for that exact string).
+    - To add other programs (Target Partners, Walmart Creator, ShareASale,
+      etc.) once you're accepted, swap a card's href to that program's link
+      format the same way.
+    - The disclosure text in the footer is required by the FTC whenever a
+      link earns you a commission — keep some version of it visible on any
+      page with affiliate links, not just this one.
+    - Just tell Claude which real products/links to drop in and it'll edit
+      this file directly — no need to touch the code yourself.
+  */
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root {
+    --paper: #F1F2EC;
+    --paper-raised: #FBFAF6;
+    --ink: #1E2321;
+    --ink-soft: #55605A;
+    --line: #D9DCD1;
+    --teal: #1F6E62;
+    --teal-deep: #123F39;
+    --teal-tint: #E4EFEC;
+    --gold: #C6892C;
+    --gold-tint: #F6E9D2;
+    --shadow: rgba(30, 35, 33, 0.10);
+
+    --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-body: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #141814;
+      --paper-raised: #1B211C;
+      --ink: #ECEEE7;
+      --ink-soft: #A6AEA3;
+      --line: #2B322C;
+      --teal: #56B7A5;
+      --teal-deep: #2E8577;
+      --teal-tint: #1B2A26;
+      --gold: #E4B75B;
+      --gold-tint: #2E2517;
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #141814;
+    --paper-raised: #1B211C;
+    --ink: #ECEEE7;
+    --ink-soft: #A6AEA3;
+    --line: #2B322C;
+    --teal: #56B7A5;
+    --teal-deep: #2E8577;
+    --teal-tint: #1B2A26;
+    --gold: #E4B75B;
+    --gold-tint: #2E2517;
+    --shadow: rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.55;
+    padding-inline: 20px;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1080px;
+    margin-inline: auto;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  /* ---------- header ---------- */
+
+  header.top {
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .top-inner {
+    max-width: 1080px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 14px;
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .brand svg { flex: none; color: var(--teal); }
+
+  nav.cats {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+  }
+
+  nav.cats a {
+    padding: 6px 12px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--ink-soft);
+    border: 1px solid transparent;
+    font-weight: 500;
+  }
+
+  nav.cats a:hover, nav.cats a:focus-visible {
+    border-color: var(--line);
+    color: var(--ink);
+    background: var(--paper-raised);
+  }
+
+  /* ---------- hero ---------- */
+
+  .hero {
+    padding-block: 56px 40px;
+    display: grid;
+    gap: 22px;
+    max-width: 640px;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--teal-deep);
+    background: var(--teal-tint);
+    display: inline-flex;
+    padding: 4px 10px;
+    border-radius: 5px;
+    width: fit-content;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 4.4vw + 1rem, 3.4rem);
+    font-weight: 600;
+    line-height: 1.08;
+  }
+
+  .hero p {
+    color: var(--ink-soft);
+    font-size: 1.08rem;
+    max-width: 34em;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 10px;
+  }
+
+  .step {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 14px 16px;
+  }
+
+  .step .num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--teal-deep);
+    font-weight: 600;
+  }
+
+  .step p {
+    margin: 6px 0 0;
+    font-size: 0.88rem;
+    color: var(--ink);
+  }
+
+  @media (max-width: 640px) {
+    .steps { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- category sections ---------- */
+
+  section.category {
+    padding-block: 34px;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: 70px;
+  }
+
+  .cat-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .cat-head h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .cat-head span {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+  }
+
+  .card {
+    position: relative;
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 1px 2px var(--shadow);
+    overflow: hidden;
+  }
+
+  .sample-ribbon {
+    position: absolute;
+    top: 12px;
+    right: -30px;
+    transform: rotate(35deg);
+    background: var(--gold);
+    color: var(--paper-raised);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 3px 34px;
+    text-transform: uppercase;
+  }
+
+  .card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding-right: 40px;
+  }
+
+  .card .blurb {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    flex: 1;
+  }
+
+  .card .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .price {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+    background: var(--gold-tint);
+    padding: 3px 8px;
+    border-radius: 5px;
+  }
+
+  .shop-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    background: var(--teal);
+    color: var(--paper-raised);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 8px 14px;
+    border-radius: 7px;
+    transition: background 0.15s ease;
+  }
+
+  .shop-btn:hover, .shop-btn:focus-visible {
+    background: var(--teal-deep);
+  }
+
+  .shop-btn:focus-visible {
+    outline: 2px solid var(--teal-deep);
+    outline-offset: 2px;
+  }
+
+  /* ---------- footer ---------- */
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding-block: 30px 40px;
+    margin-top: 20px;
+    display: grid;
+    gap: 14px;
+  }
+
+  footer .disclosure {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    max-width: 62em;
+    line-height: 1.6;
+  }
+
+  footer .bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="#top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+        <path d="M3 12 12 3h7a2 2 0 0 1 2 2v7l-9 9z"/>
+        <circle cx="16.2" cy="7.8" r="1.4" fill="currentColor" stroke="none"/>
+      </svg>
+      Worth It
+    </a>
+    <nav class="cats">
+      <a href="#kitchen">Kitchen</a>
+      <a href="#home">Home</a>
+      <a href="#tech">Tech &amp; Carry</a>
+      <a href="#outdoors">Outdoors</a>
+      <a href="#pets">Pets</a>
+      <a href="#desk">Desk</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap" id="top">
+
+  <section class="hero">
+    <span class="eyebrow">Curated picks, plain English</span>
+    <h1>The ordinary stuff, actually worth buying.</h1>
+    <p>No influencer hauls, no "10,000 five-star reviews" nonsense — just a
+    short, honest shortlist of everyday items across kitchen, home, tech and
+    more. Click through, buy where you'd buy anyway, done.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <p>Browse a category below</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <p>Tap "Shop this pick" to view it at the retailer</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <p>Buy if it's right for you — we may earn a small commission, at no extra cost to you</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="category" id="kitchen">
+    <div class="cat-head">
+      <h2>Kitchen &amp; Cooking</h2>
+      <span>3 picks</span>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>Stainless Steel Garlic Press</h3>
+        <p class="blurb">No peeling required and easy to rinse clean — the one gadget that actually earns its drawer space.</p>
+        <div class="row">
+          <span class="price">$12–18</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=stainless+steel+garlic+press&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>Compact Air Fryer (3.5 qt)</h3>
+        <p class="blurb">Countertop-friendly size for one or two people, with a dishwasher-safe basket.</p>
+        <div class="row">
+          <span class="price">$45–65</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=compact+air+fryer+3.5+qt&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>Bamboo Dish Drying Rack</h3>
+        <p class="blurb">Folds flat for storage and doesn't rust the way wire racks eventually do.</p>
+        <div class="row">
+          <span class="price">$25–35</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=bamboo+dish+drying+rack&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="category" id="home">
+    <div class="cat-head">
+      <h2>Home &amp; Organization</h2>
+      <span>3 picks</span>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>Over-Door Hook Organizer</h3>
+        <p class="blurb">Six sturdy hooks, no drilling — good for coats, towels, or a cluttered closet door.</p>
+        <div class="row">
+          <span class="price">$14–20</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=over+door+hook+organizer&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>Stackable Drawer Organizer Set</h3>
+        <p class="blurb">Modular trays that click together, so junk drawers stop being junk drawers.</p>
+        <div class="row">
+          <span class="price">$18–28</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=stackable+drawer+organizer+set&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>6-Outlet Surge Protector</h3>
+        <p class="blurb">Individually switched outlets, so one lamp doesn't have to kill power to everything else.</p>
+        <div class="row">
+          <span class="price">$16–24</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=6+outlet+surge+protector&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="category" id="tech">
+    <div class="cat-head">
+      <h2>Tech &amp; Everyday Carry</h2>
+      <span>3 picks</span>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>Wireless Charging Stand</h3>
+        <p class="blurb">Props your phone upright at an angle you can actually see notifications on.</p>
+        <div class="row">
+          <span class="price">$20–30</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=wireless+charging+stand&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>USB-C Multiport Hub</h3>
+        <p class="blurb">HDMI, USB-A and an SD slot in one small block — solves the "one port" laptop problem.</p>
+        <div class="row">
+          <span class="price">$22–32</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=usb-c+multiport+hub&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>10,000mAh Power Bank</h3>
+        <p class="blurb">Pocket-sized backup charge for travel days or a phone that doesn't hold a charge anymore.</p>
+        <div class="row">
+          <span class="price">$18–26</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=10000mah+power+bank&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="category" id="outdoors">
+    <div class="cat-head">
+      <h2>Outdoors &amp; Fitness</h2>
+      <span>3 picks</span>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>32oz Insulated Water Bottle</h3>
+        <p class="blurb">Keeps ice for most of a workday and fits in a standard car cup holder.</p>
+        <div class="row">
+          <span class="price">$22–30</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=32oz+insulated+water+bottle&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>Weighted Jump Rope</h3>
+        <p class="blurb">Ball-bearing swivel and adjustable length — the whole home cardio kit fits in a drawer.</p>
+        <div class="row">
+          <span class="price">$14–20</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=weighted+jump+rope&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>Folding Camp Chair</h3>
+        <p class="blurb">Packs into its own bag for tailgates, kids' games, or the beach.</p>
+        <div class="row">
+          <span class="price">$28–40</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=folding+camp+chair&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="category" id="pets">
+    <div class="cat-head">
+      <h2>Pets</h2>
+      <span>3 picks</span>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>Retractable Dog Leash</h3>
+        <p class="blurb">One-button lock and a comfortable grip for longer walks.</p>
+        <div class="row">
+          <span class="price">$16–24</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=retractable+dog+leash&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>Slow-Feed Dog Bowl</h3>
+        <p class="blurb">Ridged interior that helps fast eaters slow down, without changing their food.</p>
+        <div class="row">
+          <span class="price">$10–16</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=slow+feed+dog+bowl&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>Self-Cleaning Cat Litter Scoop</h3>
+        <p class="blurb">Wide sifting head and a matching bag holder — less time hovering over the box.</p>
+        <div class="row">
+          <span class="price">$12–18</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=cat+litter+scoop+with+bag+holder&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="category" id="desk">
+    <div class="cat-head">
+      <h2>Desk &amp; Office</h2>
+      <span>3 picks</span>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>Adjustable Laptop Stand</h3>
+        <p class="blurb">Folds flat for a bag, and raises the screen to a height that doesn't wreck your neck.</p>
+        <div class="row">
+          <span class="price">$24–34</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=adjustable+laptop+stand&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>Blue Light Filtering Glasses</h3>
+        <p class="blurb">No prescription needed — an easy add for long screen days.</p>
+        <div class="row">
+          <span class="price">$15–22</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=blue+light+filtering+glasses&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+      <article class="card">
+        <span class="sample-ribbon">Sample</span>
+        <h3>Under-Desk Cable Tray</h3>
+        <p class="blurb">Sticks or clamps under the desk to keep power strips off the floor.</p>
+        <div class="row">
+          <span class="price">$14–20</span>
+          <a class="shop-btn" href="https://www.amazon.com/s?k=under+desk+cable+management+tray&tag=YOUR-ASSOCIATES-TAG-20" target="_blank" rel="noopener sponsored">Shop this pick →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <p class="disclosure">
+      Worth It is a participant in the Amazon Services LLC Associates Program, an
+      affiliate advertising program designed to provide a means for sites to earn
+      advertising fees by linking to Amazon.com and affiliated sites. As an Amazon
+      Associate, we earn from qualifying purchases. Prices and availability shown
+      are illustrative and may not reflect current listings.
+    </p>
+    <div class="bottom-row">
+      <span>© 2026 Worth It</span>
+      <span>Every pick chosen because it's genuinely useful — not because it pays the most.</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
